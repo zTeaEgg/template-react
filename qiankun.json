@@ -1,0 +1,24 @@
+{
+    "main":{
+        "micro":[
+            {
+                "name": "vue-app",
+                "entry": "http://localhost:9090",
+                "container": "#vue-app-container",
+                "activeRule": "/vue-app"
+            },
+            {
+                "name": "sub-app",
+                "entry": "192.168.16.139:9008",
+                "container": "#sub-app-container",
+                "activeRule": "/sub-app"
+            }
+        ]
+    },
+    "micro":{
+        "name": "react-app",
+        "entry": "http://localhost:9091",
+        "container": "react-app-container",
+        "activeRule": "/react-app"
+    }
+}

@@ -1,0 +1,12 @@
+micro:
+  name: react-app
+  entry: http://localhost:9091
+  container: \#react-app-container
+  activeRule: /react-app
+main:
+  micro:
+    - name: vue-app   
+      entry: http://localhost:9090
+      container: \#vue-app-container
+      activeRule: /vue-app
+  

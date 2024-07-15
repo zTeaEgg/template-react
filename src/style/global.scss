@@ -1,0 +1,17 @@
+
+.w100{
+    width: 100%;
+}
+.h100{
+    height: 100%;
+}
+
+html, body, #root{
+    @extend .w100;
+    @extend .h100;
+    margin: 0;
+    padding: 0;
+}
+.element-hidden{
+    display: none;
+}
