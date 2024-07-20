@@ -1,4 +1,5 @@
 {
     "encryptKey":"1234567890ABCDEF",
-    "encryptIV":"FEDCBA987654321"
+    "encryptIV":"FEDCBA987654321",
+    "apiTimeout":30000
 }

@@ -1,13 +1,13 @@
+import { bootstrap as bootstrap_, isMicroApp, mount as mount_, unmount as unmount_, update as update_ } from '@/microApp'
+import { router } from '@/router/index.tsx'
+import { persistStore_, store } from '@/store/index.tsx'
+import '@/style/index.scss'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { Provider } from 'react-redux'
 import { RouterProvider } from 'react-router-dom'
 import { PersistGate } from 'redux-persist/integration/react'
 import { renderWithQiankun } from 'vite-plugin-qiankun/es/helper'
-import { bootstrap as bootstrap_, isMicroApp, mount as mount_, unmount as unmount_, update as update_ } from './microApp'
-import { router } from './router/index.tsx'
-import { persistStore_, store } from './store/index.tsx'
-import './style/index.scss'
 
 function render() {
   ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -44,6 +44,7 @@ if (!isMicroApp()) {
     bootstrap: bootstrap_,
   })
 }
+
 // export const mount = (props)=>{
 //   mount_(props,render)
 // }

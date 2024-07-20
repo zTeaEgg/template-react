@@ -1,8 +1,8 @@
+import { UserState } from "@/store/types";
 import { createSlice } from "@reduxjs/toolkit";
-import { UserState } from "./types";
 
 const userInitState: UserState = {
-    token: '',
+    token: '1',
     userInfo: {}
 }
 const user = createSlice({

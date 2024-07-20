@@ -1,9 +1,10 @@
-import appConfig from '../../app.config.json'
-import mainConfig from '../microApp/mainConfig'
-import microConfig from '../microApp/microConfig'
+import appConfig from '@/../app.config.json'
+import mainConfig from '@/microApp/mainConfig'
+import microConfig from '@/microApp/microConfig'
 type AppConfig = {
     encryptKey:string
     encryptIV:string
+    apiTimeout:number
 }
 export function getAppConfig():AppConfig{
     return appConfig

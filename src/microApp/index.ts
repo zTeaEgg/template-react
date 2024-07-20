@@ -1,6 +1,6 @@
-export * from './mainApp';
-export * from './mainConfig';
-export * from './microApp';
+export * from '@/microApp/mainApp';
+export * from '@/microApp/mainConfig';
+export * from '@/microApp/microApp';
 
 export function isMicroApp () {
     

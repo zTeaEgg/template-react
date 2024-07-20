@@ -1,10 +1,8 @@
-import { createBrowserRouter, redirect, } from "react-router-dom";
-import App from "../App";
-import home from '../views/home';
-import test from "../views/test";
-function redirctRoute() {
-    redirect('/react-app/index')
-}
+import App from "@/App";
+import home from '@/views/home';
+import test from "@/views/test";
+import { createBrowserRouter } from "react-router-dom";
+
 export const router: any = createBrowserRouter([
     {
         path: '/',
