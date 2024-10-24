@@ -1,5 +1,7 @@
 {
     "encryptKey":"1234567890ABCDEF",
     "encryptIV":"FEDCBA987654321",
-    "apiTimeout":30000
+    "apiTimeout":30000,
+    "mainApp":true,
+    "microApp":false
 }

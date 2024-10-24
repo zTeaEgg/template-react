@@ -5,6 +5,8 @@ type AppConfig = {
     encryptKey:string
     encryptIV:string
     apiTimeout:number
+    mainApp:boolean
+    microApp:boolean
 }
 export function getAppConfig():AppConfig{
     return appConfig

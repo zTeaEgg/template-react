@@ -1,4 +1,4 @@
-import { bootstrap as bootstrap_, isMicroApp, mount as mount_, unmount as unmount_, update as update_ } from '@/microApp'
+import { bootstrap as bootstrap_, isMicroApp, mount as mount_, startMainApp, unmount as unmount_, update as update_ } from '@/microApp'
 import { router } from '@/router/index.tsx'
 import { persistStore_, store } from '@/store/index.tsx'
 import '@/style/index.scss'
@@ -8,6 +8,7 @@ import { Provider } from 'react-redux'
 import { RouterProvider } from 'react-router-dom'
 import { PersistGate } from 'redux-persist/integration/react'
 import { renderWithQiankun } from 'vite-plugin-qiankun/es/helper'
+import { getAppConfig } from './utils/useConfig'
 
 function render() {
   ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -24,26 +25,30 @@ function render() {
     </React.StrictMode>,
   )
 }
-// function loadMicroApp_() {
-//   start({ prefetch: false, urlRerouteOnly: true })
-//   registerMicroApps(mainConfig.micro)
-//   loadMicroApp({
-//     ...mainConfig.micro[0]
-//   })
-// }
-if (!isMicroApp()) {
+const { mainApp, microApp } = getAppConfig()
+if (mainApp) {
+  startMainApp()
+
+}
+if (microApp) {
+  if (!isMicroApp()) {
+    render()
+
+  } else {
+    renderWithQiankun({
+      mount: (props) => {
+        mount_(props, render)
+      },
+      unmount: unmount_,
+      update: update_,
+      bootstrap: bootstrap_,
+    })
+  }
+} else {
   render()
 
-} else {
-  renderWithQiankun({
-    mount: (props) => {
-      mount_(props, render)
-    },
-    unmount: unmount_,
-    update: update_,
-    bootstrap: bootstrap_,
-  })
 }
+
 
 // export const mount = (props)=>{
 //   mount_(props,render)

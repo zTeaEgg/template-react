@@ -4,7 +4,7 @@ function App() {
   return (
      <>
       <Routes>
-        <Route path='/' element={<Navigate  replace to="/index"></Navigate>}></Route>
+        <Route path='/' element={<Navigate  replace to="/"></Navigate>}></Route>
       </Routes>
       <Outlet></Outlet>
       </>
